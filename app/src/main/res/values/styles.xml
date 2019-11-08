@@ -1,0 +1,57 @@
+<resources>
+
+    <!-- Base application theme. -->
+    <style name="AppTheme" parent="Theme.MaterialComponents.Light.NoActionBar">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">@color/colorPrimaryDark</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/colorAccent</item>
+    </style>
+
+    <style name="AppThemeTrans" parent="Theme.MaterialComponents.Light.NoActionBar">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">@color/colorPrimaryDark</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/colorAccent</item>
+        <item name="android:windowTranslucentStatus"> true </item>
+        <item name="android:windowTranslucentNavigation"> true </item>
+        <item name="android:windowIsTranslucent"> true </item>
+    </style>
+
+    <style name="AppTheme2" parent="Theme.MaterialComponents.Light.NoActionBar">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">@color/colorAccent2</item>
+        <item name="colorPrimaryDark">@color/colorAccent2</item>
+        <item name="colorAccent">@color/colorAccent2</item>
+    </style>
+
+    <style name="AppTheme.NoActionBar">
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
+    </style>
+
+    <style name="appHint" parent="TextAppearance.Design.Hint">
+        <item name="android:textColor"> @color/colorAccent2 </item>
+        <item name="android:elevation"> 10dp </item>
+    </style>
+
+    <style name="appTitle" parent="TextAppearance.Design.Hint">
+        <item name="android:textColor"> @color/colorAccent2 </item>
+        <item name="android:elevation"> 16dp </item>
+    </style>
+
+    <style name="MemberTitle" parent="TextAppearance.Design.Hint">
+        <item name="android:textColor"> @android:color/white </item>
+        <item name="android:elevation"> 16dp </item>
+    </style>
+
+    <style name="InvisibleText">
+        <item name="android:textColor"> @android:color/transparent </item>
+        <item name="android:textSize"> 0sp </item>
+    </style>
+
+    <style name="AppTheme.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
+
+    <style name="AppTheme.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
+
+</resources>

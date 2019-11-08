@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    // Theme 1
+    <color name="colorPrimary">#032160</color>
+    <color name="colorPrimaryDark">#032160</color>
+    <color name="colorPrimaryLight">#6200EA</color>
+    <color name="colorAccent2">#FF9900</color>
+    <color name="colorAccent">#FF9900</color>
+    <color name="colorAccent3">#BC5D02</color>
+    <color name="colorAccent4">#FBE868</color>
+    <color name="colorAccent5">#FDFF8A</color>
+    <color name="colorAccentTrans">#B2FF9900</color>
+
+    // Theme 2
+    <!--<color name="colorPrimary">#2196F3</color>-->
+    <!--<color name="colorPrimaryDark">#2196F3</color>-->
+    <!--<color name="colorPrimaryLight">#6200EA</color>-->
+    <!--<color name="colorAccent">#FF9800</color>-->
+    <!--<color name="colorAccent2">#FF9800</color>-->
+    <!--<color name="colorAccent3">#FFC107</color>-->
+    <!--<color name="colorAccent4">#FFC107</color>-->
+    <!--<color name="colorAccent5">#FFEB3B</color>-->
+    <!--<color name="colorAccentTrans">#B2FF9800</color>-->
+
+
+    <color name="colorRed">#FF1744</color>
+    <color name="colorGreen">#00E676</color>
+    <color name="white">#FFFFFF</color>
+
+
+    <color name="whiteTrans">#CBFFFFFF</color>
+    <color name="colorAccentTrans2">#19FF9900</color>
+
+</resources>

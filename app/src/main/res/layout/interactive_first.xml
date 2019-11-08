@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorPrimary"
+    tools:context=".interactive.InteractiveFirstActivity">
+
+    <ImageView
+        android:id="@+id/imageView3"
+        android:layout_width="150dp"
+        android:layout_height="150dp"
+        android:layout_marginTop="50dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/avatar_1" />
+
+    <TextView
+        android:id="@+id/welcome_message"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:fontFamily="cursive"
+        android:text="Welcome"
+        android:textColor="@color/colorAccent"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="@+id/imageView3"
+        app:layout_constraintStart_toStartOf="@+id/imageView3"
+        app:layout_constraintTop_toBottomOf="@+id/imageView3" />
+
+    <TextView
+        android:id="@+id/user_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:fontFamily="sans-serif-condensed-medium"
+        android:text="User's Name"
+        android:textColor="@color/colorAccent"
+        android:textSize="24sp"
+        app:layout_constraintEnd_toEndOf="@+id/welcome_message"
+        app:layout_constraintStart_toStartOf="@+id/welcome_message"
+        app:layout_constraintTop_toBottomOf="@+id/welcome_message" />
+
+    <TextView
+        android:id="@+id/info_msg"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="50dp"
+        android:fontFamily="sans-serif-condensed-medium"
+        android:paddingStart="20dp"
+        android:paddingEnd="20dp"
+        android:text="Please Is This Your First Time In Christ Embassy Church"
+        android:textAlignment="center"
+        android:textColor="@color/colorAccent"
+        android:textSize="18sp"
+        app:layout_constraintEnd_toEndOf="@+id/user_name"
+        app:layout_constraintStart_toStartOf="@+id/user_name"
+        app:layout_constraintTop_toBottomOf="@+id/user_name" />
+
+    <Button
+        android:id="@+id/button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:backgroundTint="@android:color/transparent"
+        android:onClick="yesResponse"
+        android:text="Yes"
+        android:textColor="@color/colorAccent2"
+        app:iconTint="@color/colorAccent2"
+        app:layout_constraintBottom_toBottomOf="@+id/button2"
+        app:layout_constraintEnd_toEndOf="@+id/info_msg"
+        app:layout_constraintStart_toEndOf="@+id/button2"
+        app:layout_constraintTop_toTopOf="@+id/button2" />
+
+    <Button
+        android:id="@+id/button2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="30dp"
+        android:backgroundTint="@android:color/transparent"
+        android:onClick="noResponse"
+        android:text="No"
+        android:textColor="@color/colorAccent2"
+        app:iconTint="@color/colorAccent2"
+        app:layout_constraintEnd_toStartOf="@+id/button"
+        app:layout_constraintStart_toStartOf="@+id/info_msg"
+        app:layout_constraintTop_toBottomOf="@+id/info_msg" />
+
+
+    <ImageView
+        android:id="@+id/imageView4"
+        android:layout_width="70dp"
+        android:layout_height="70dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="20dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/ce_logo" />
+
+    <!--<com.google.android.material.textfield.TextInputLayout-->
+        <!--style="@style/Widget.MaterialComponents.TextInputLayout.FilledBox"-->
+        <!--android:layout_width="395dp"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:layout_marginTop="40dp"-->
+        <!--android:hint="Please Enter Your Name For Attendance"-->
+        <!--android:textColorHint="@color/colorAccent"-->
+        <!--app:boxBackgroundMode="filled"-->
+        <!--app:hintAnimationEnabled="true"-->
+        <!--app:hintEnabled="true"-->
+        <!--app:layout_constraintEnd_toEndOf="@+id/user_name"-->
+        <!--app:layout_constraintStart_toStartOf="@+id/user_name"-->
+        <!--app:layout_constraintTop_toBottomOf="@+id/user_name">-->
+
+        <!--<com.google.android.material.textfield.TextInputEditText-->
+            <!--android:layout_width="match_parent"-->
+            <!--android:layout_height="wrap_content" />-->
+    <!--</com.google.android.material.textfield.TextInputLayout>-->
+</androidx.constraintlayout.widget.ConstraintLayout>

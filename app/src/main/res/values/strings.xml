@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">CE Church Admin</string>
+    <string name="action_settings">Settings</string>
+    <string name="channel_name">Christ Embassy</string>
+    <string name="channel_description">A channel notiffication that represents an ongoing church churchService and it\'s attendance</string>
+    <string name="channel_id">CE1001</string>
+    <string name="title_activity_member">MemberActivity</string>
+    <string name="reg_issues">We Are Sorry For The Inconveniences You Are Facing. Please Register Your Informations Again.</string>
+    <string name="attended">Thank You So Much For Your Cooperation, We Are Aware You Are In Service Already</string>
+</resources>

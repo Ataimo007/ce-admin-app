@@ -1,0 +1,485 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fitsSystemWindows="true">
+
+    <androidx.coordinatorlayout.widget.CoordinatorLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <com.google.android.material.appbar.AppBarLayout
+            android:id="@+id/appbar"
+            android:layout_width="match_parent"
+            android:layout_height="200dp"
+            android:background="@color/colorAccent2">
+
+            <com.google.android.material.appbar.CollapsingToolbarLayout
+                android:id="@+id/user_reg_collapse"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                app:contentScrim="@color/colorAccent2"
+                app:expandedTitleTextAppearance="@style/InvisibleText"
+                app:layout_scrollFlags="scroll|exitUntilCollapsed"
+                app:layout_scrollInterpolator="@android:anim/decelerate_interpolator"
+                app:toolbarId="@+id/toolbar">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    app:layout_collapseMode="parallax">
+
+                    <com.github.siyamed.shapeimageview.CircularImageView
+                        android:id="@+id/app_bar_image"
+                        android:layout_width="150dp"
+                        android:layout_height="150dp"
+                        android:background="@color/colorAccent2"
+                        android:scaleType="centerCrop"
+                        android:src="@drawable/avatar_1"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+                <androidx.appcompat.widget.Toolbar
+                    android:id="@+id/toolbar"
+                    android:layout_width="match_parent"
+                    android:layout_height="?attr/actionBarSize"
+                    app:layout_collapseMode="parallax">
+
+                </androidx.appcompat.widget.Toolbar>
+            </com.google.android.material.appbar.CollapsingToolbarLayout>
+        </com.google.android.material.appbar.AppBarLayout>
+
+        <androidx.core.widget.NestedScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/colorPrimary"
+            app:layout_behavior="com.google.android.material.appbar.AppBarLayout$ScrollingViewBehavior">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/reg_first_name"
+                    style="@style/Widget.MaterialComponents.TextInputLayout.FilledBox"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="20dp"
+                    android:layout_marginTop="30dp"
+                    android:layout_marginEnd="20dp"
+                    android:hint="First Name"
+                    android:textColorHint="@color/colorAccent2"
+                    app:boxBackgroundColor="@android:color/white"
+                    app:boxBackgroundMode="filled"
+                    app:boxCornerRadiusBottomEnd="5dp"
+                    app:boxCornerRadiusBottomStart="5dp"
+                    app:boxCornerRadiusTopEnd="10dp"
+                    app:boxCornerRadiusTopStart="10dp"
+                    app:boxStrokeColor="@color/colorAccent2"
+                    app:hintAnimationEnabled="true"
+                    app:hintEnabled="true"
+                    app:hintTextAppearance="@style/appHint"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/regs_first_name"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:inputType="textAutoCorrect|textCapWords"
+                        android:singleLine="true" />
+
+                </com.google.android.material.textfield.TextInputLayout>
+
+<!--                regs_first_name-->
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/reg_last_name"
+                    style="@style/Widget.MaterialComponents.TextInputLayout.FilledBox"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="30dp"
+                    android:hint="Surname"
+                    android:textColorHint="@color/colorAccent2"
+                    app:boxBackgroundColor="@android:color/white"
+                    app:boxBackgroundMode="filled"
+                    app:boxCornerRadiusBottomEnd="5dp"
+                    app:boxCornerRadiusBottomStart="5dp"
+                    app:boxCornerRadiusTopEnd="10dp"
+                    app:boxCornerRadiusTopStart="10dp"
+                    app:boxStrokeColor="@color/colorAccent2"
+                    app:hintAnimationEnabled="true"
+                    app:hintEnabled="true"
+                    app:hintTextAppearance="@style/appHint"
+                    app:layout_constraintEnd_toEndOf="@+id/reg_first_name"
+                    app:layout_constraintStart_toStartOf="@+id/reg_first_name"
+                    app:layout_constraintTop_toBottomOf="@id/reg_first_name">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/regs_last_name"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:inputType="textAutoCorrect|textCapWords"
+                        android:singleLine="true" />
+
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/reg_other_names"
+                    style="@style/Widget.MaterialComponents.TextInputLayout.FilledBox"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="30dp"
+                    android:hint="Other Names"
+                    android:textColorHint="@color/colorAccent2"
+                    app:boxBackgroundColor="@android:color/white"
+                    app:boxBackgroundMode="filled"
+                    app:boxCornerRadiusBottomEnd="5dp"
+                    app:boxCornerRadiusBottomStart="5dp"
+                    app:boxCornerRadiusTopEnd="10dp"
+                    app:boxCornerRadiusTopStart="10dp"
+                    app:boxStrokeColor="@color/colorAccent2"
+                    app:hintAnimationEnabled="true"
+                    app:hintEnabled="true"
+                    app:hintTextAppearance="@style/appHint"
+                    app:layout_constraintEnd_toEndOf="@+id/reg_last_name"
+                    app:layout_constraintStart_toStartOf="@+id/reg_last_name"
+                    app:layout_constraintTop_toBottomOf="@id/reg_last_name">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/regs_other_names"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:inputType="textAutoCorrect|textCapWords"
+                        android:singleLine="true" />
+
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/reg_rank"
+                    style="@style/Widget.MaterialComponents.TextInputLayout.FilledBox"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="30dp"
+                    android:hint="Rank"
+                    android:textColorHint="@color/colorAccent2"
+                    app:boxBackgroundColor="@android:color/white"
+                    app:boxBackgroundMode="filled"
+                    app:boxCornerRadiusBottomEnd="5dp"
+                    app:boxCornerRadiusBottomStart="5dp"
+                    app:boxCornerRadiusTopEnd="10dp"
+                    app:boxCornerRadiusTopStart="10dp"
+                    app:boxStrokeColor="@color/colorAccent2"
+                    app:hintAnimationEnabled="true"
+                    app:hintEnabled="true"
+                    app:hintTextAppearance="@style/appHint"
+                    app:layout_constraintEnd_toEndOf="@+id/reg_other_names"
+                    app:layout_constraintStart_toStartOf="@+id/reg_other_names"
+                    app:layout_constraintTop_toBottomOf="@id/reg_other_names"
+                    tools:visibility="gone">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/regs_rank"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:drawableEnd="@drawable/ic_gold_down_arrow_24dp"
+                        android:inputType="textAutoCorrect|textCapWords"
+                        android:singleLine="true" />
+
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <TextView
+                    android:id="@+id/info_msg"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="30dp"
+                    android:text="Gender"
+                    android:textColor="@color/colorAccent2"
+                    android:textSize="18sp"
+                    android:textStyle="bold"
+                    app:layout_constraintStart_toStartOf="@+id/reg_other_names"
+                    app:layout_constraintTop_toBottomOf="@+id/reg_rank" />
+
+                <RadioGroup
+                    android:id="@+id/reg_gender"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_marginTop="10dp"
+                    android:orientation="horizontal"
+                    android:scrollbars="horizontal"
+                    app:layout_constraintEnd_toEndOf="@+id/reg_other_names"
+                    app:layout_constraintStart_toStartOf="@+id/reg_other_names"
+                    app:layout_constraintTop_toBottomOf="@+id/info_msg">
+
+                    <RadioButton
+                        android:id="@+id/gender_male"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:buttonTint="@color/colorAccent2"
+                        android:clickable="true"
+                        android:focusable="auto"
+                        android:text="Male"
+                        android:textColor="@color/colorAccent2"
+                        android:textSize="18sp"
+                        android:textStyle="bold" />
+
+                    <RadioButton
+                        android:id="@+id/gender_female"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="Female"
+                        android:buttonTint="@color/colorAccent2"
+                        android:clickable="true"
+                        android:focusable="auto"
+                        android:textColor="@color/colorAccent2"
+                        android:textSize="18sp"
+                        android:textStyle="bold" />
+                </RadioGroup>
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/reg_phone"
+                    style="@style/Widget.MaterialComponents.TextInputLayout.FilledBox"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="30dp"
+                    android:hint="Phone Number"
+                    android:textColorHint="@color/colorAccent2"
+                    app:boxBackgroundColor="@android:color/white"
+                    app:boxBackgroundMode="filled"
+                    app:boxCornerRadiusBottomEnd="5dp"
+                    app:boxCornerRadiusBottomStart="5dp"
+                    app:boxCornerRadiusTopEnd="10dp"
+                    app:boxCornerRadiusTopStart="10dp"
+                    app:boxStrokeColor="@color/colorAccent2"
+                    app:hintAnimationEnabled="true"
+                    app:hintEnabled="true"
+                    app:hintTextAppearance="@style/appHint"
+                    app:layout_constraintEnd_toEndOf="@+id/reg_gender"
+                    app:layout_constraintStart_toStartOf="@+id/reg_gender"
+                    app:layout_constraintTop_toBottomOf="@id/reg_gender">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/regs_phone"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:inputType="textAutoCorrect|number|phone"
+                        android:singleLine="true" />
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <CheckBox
+                    android:id="@+id/reg_is_king"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:buttonTint="@color/colorAccent2"
+                    android:checked="true"
+                    android:clickable="true"
+                    android:focusable="auto"
+                    android:text="Also Kings Chat Number"
+                    android:textColor="@color/colorAccent2"
+                    android:textSize="18sp"
+                    android:textStyle="bold"
+                    app:layout_constraintEnd_toEndOf="@+id/reg_phone"
+                    app:layout_constraintHorizontal_bias="0.0"
+                    app:layout_constraintStart_toStartOf="@+id/reg_phone"
+                    app:layout_constraintTop_toBottomOf="@id/reg_phone" />
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/reg_kings_chat"
+                    style="@style/Widget.MaterialComponents.TextInputLayout.FilledBox"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="30dp"
+                    android:hint="Kings Chat Number"
+                    android:textColorHint="@color/colorAccent2"
+                    android:visibility="gone"
+                    app:boxBackgroundColor="@android:color/white"
+                    app:boxBackgroundMode="filled"
+                    app:boxCornerRadiusBottomEnd="5dp"
+                    app:boxCornerRadiusBottomStart="5dp"
+                    app:boxCornerRadiusTopEnd="10dp"
+                    app:boxCornerRadiusTopStart="10dp"
+                    app:boxStrokeColor="@color/colorAccent2"
+                    app:hintAnimationEnabled="true"
+                    app:hintEnabled="true"
+                    app:hintTextAppearance="@style/appHint"
+                    app:layout_constraintEnd_toEndOf="@+id/reg_phone"
+                    app:layout_constraintStart_toStartOf="@+id/reg_phone"
+                    app:layout_constraintTop_toBottomOf="@id/reg_is_king">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/regs_kings_chat"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:inputType="textAutoCorrect|number|phone"
+                        android:singleLine="true" />
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/reg_email"
+                    style="@style/Widget.MaterialComponents.TextInputLayout.FilledBox"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="30dp"
+                    android:hint="Email Address"
+                    android:textColorHint="@color/colorAccent2"
+                    app:boxBackgroundColor="@android:color/white"
+                    app:boxBackgroundMode="filled"
+                    app:boxCornerRadiusBottomEnd="5dp"
+                    app:boxCornerRadiusBottomStart="5dp"
+                    app:boxCornerRadiusTopEnd="10dp"
+                    app:boxCornerRadiusTopStart="10dp"
+                    app:boxStrokeColor="@color/colorAccent2"
+                    app:hintAnimationEnabled="true"
+                    app:hintEnabled="true"
+                    app:hintTextAppearance="@style/appHint"
+                    app:layout_constraintEnd_toEndOf="@+id/reg_phone"
+                    app:layout_constraintStart_toStartOf="@+id/reg_phone"
+                    app:layout_constraintTop_toBottomOf="@id/reg_kings_chat">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/regs_email"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:inputType="textAutoCorrect|textEmailAddress"
+                        android:singleLine="true" />
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/reg_dob"
+                    style="@style/Widget.MaterialComponents.TextInputLayout.FilledBox"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="30dp"
+                    android:hint="Date Of Birth"
+                    android:textColorHint="@color/colorAccent2"
+                    app:boxBackgroundColor="@android:color/white"
+                    app:boxBackgroundMode="filled"
+                    app:boxCornerRadiusBottomEnd="5dp"
+                    app:boxCornerRadiusBottomStart="5dp"
+                    app:boxCornerRadiusTopEnd="10dp"
+                    app:boxCornerRadiusTopStart="10dp"
+                    app:boxStrokeColor="@color/colorAccent2"
+                    app:hintAnimationEnabled="true"
+                    app:hintEnabled="true"
+                    app:hintTextAppearance="@style/appHint"
+                    app:layout_constraintEnd_toEndOf="@+id/reg_email"
+                    app:layout_constraintStart_toStartOf="@+id/reg_email"
+                    app:layout_constraintTop_toBottomOf="@id/reg_email">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/regs_dob"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:inputType="date|textAutoComplete"
+                        android:singleLine="true" />
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <CheckBox
+                    android:id="@+id/reg_ignore_year"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:buttonTint="@color/colorAccent2"
+                    android:checked="true"
+                    android:text="Ignore Year"
+                    android:textColor="@color/colorAccent2"
+                    android:textSize="18sp"
+                    android:textStyle="bold"
+                    app:layout_constraintStart_toStartOf="@+id/reg_dob"
+                    app:layout_constraintTop_toBottomOf="@+id/reg_dob" />
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/reg_address"
+                    style="@style/Widget.MaterialComponents.TextInputLayout.FilledBox"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="30dp"
+                    android:hint="Home Address"
+                    android:textColorHint="@color/colorAccent2"
+                    app:boxBackgroundColor="@android:color/white"
+                    app:boxBackgroundMode="filled"
+                    app:boxCornerRadiusBottomEnd="5dp"
+                    app:boxCornerRadiusBottomStart="5dp"
+                    app:boxCornerRadiusTopEnd="10dp"
+                    app:boxCornerRadiusTopStart="10dp"
+                    app:boxStrokeColor="@color/colorAccent2"
+                    app:hintAnimationEnabled="true"
+                    app:hintEnabled="true"
+                    app:hintTextAppearance="@style/appHint"
+                    app:layout_constraintEnd_toEndOf="@+id/reg_dob"
+                    app:layout_constraintStart_toStartOf="@+id/reg_dob"
+                    app:layout_constraintTop_toBottomOf="@+id/reg_ignore_year">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/regs_address"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:inputType="textCapSentences|textAutoComplete"
+                        android:singleLine="true" />
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/reg_cell"
+                    style="@style/Widget.MaterialComponents.TextInputLayout.FilledBox"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="30dp"
+                    android:layout_marginBottom="100dp"
+                    android:hint="Cell"
+                    android:textColorHint="@color/colorAccent2"
+                    app:boxBackgroundColor="@android:color/white"
+                    app:boxBackgroundMode="filled"
+                    app:boxCornerRadiusBottomEnd="5dp"
+                    app:boxCornerRadiusBottomStart="5dp"
+                    app:boxCornerRadiusTopEnd="10dp"
+                    app:boxCornerRadiusTopStart="10dp"
+                    app:boxStrokeColor="@color/colorAccent2"
+                    app:hintAnimationEnabled="true"
+                    app:hintEnabled="true"
+                    app:hintTextAppearance="@style/appHint"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="@+id/reg_address"
+                    app:layout_constraintStart_toStartOf="@+id/reg_address"
+                    app:layout_constraintTop_toBottomOf="@id/reg_address">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/regs_cell"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:drawableEnd="@drawable/ic_gold_down_arrow_24dp"
+                        android:inputType="textCapSentences|textAutoComplete"
+                        android:singleLine="true" />
+                </com.google.android.material.textfield.TextInputLayout>
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </androidx.core.widget.NestedScrollView>
+
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
+            android:id="@+id/reg_action"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom|end"
+            android:layout_margin="16dp"
+            android:clickable="true"
+            android:elevation="10dp"
+            android:focusable="true"
+            android:onClick="register"
+            android:src="@drawable/ic_white_add_24dp"
+            android:tint="@android:color/white"
+            app:backgroundTint="@color/colorAccent2"
+            app:borderWidth="2dp"
+            app:fabSize="normal"
+            app:hoveredFocusedTranslationZ="8dp"
+            app:useCompatPadding="true" />
+    </androidx.coordinatorlayout.widget.CoordinatorLayout>
+
+</RelativeLayout>
+

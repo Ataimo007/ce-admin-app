@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:dist="http://schemas.android.com/apk/distribution"
+    package="com.global.tech.space.cechurchadmin">
+
+    <dist:module dist:instant="true" />
+
+    <uses-permission android:name="android.permission.FOREGROUND_SERVICE" />
+    <uses-permission android:name="android.permission.ACCESS_NOTIFICATION_POLICY" />
+
+    <application
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme">
+        <activity
+            android:name=".attendance.RegisterMemberActivity"
+            android:label="Register Member"
+            android:windowSoftInputMode="adjustResize"
+            android:theme="@style/AppTheme2">
+        </activity>
+
+        <activity
+            android:name=".attendance.RegisterCellActivity"
+            android:label="Register Cell"
+            android:windowSoftInputMode="adjustResize"
+            android:theme="@style/AppTheme2">
+        </activity>
+
+        <service
+            android:name=".ServiceCoordinator"
+            android:enabled="true"
+            android:exported="false" />
+
+        <activity
+            android:name=".MainActivity"
+            android:label="@string/app_name"
+            android:theme="@style/AppTheme.NoActionBar"
+            >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity android:name=".attendance.AttendanceActivity" />
+        <activity android:name=".attendance.SearchMembersActivity" />
+        <activity android:name=".attendance.AnalysisActivity" />
+        <activity android:name=".MainSearchActivity" />
+        <activity android:name=".attendance.WeekCellActivity" />
+        <activity android:name=".attendance.MemberActivity" />
+        <activity android:name=".attendance.CellAttendanceActivity" />
+        <activity android:name=".CellActivity" />
+
+        <!--Interations-->
+        <activity
+            android:name=".interactive.InteractiveNameActivity"
+            android:label="Welcome To Church"
+            android:windowSoftInputMode="adjustResize"
+            android:theme="@style/AppThemeTrans"
+            android:launchMode="singleTask">
+        </activity>
+        <activity
+            android:name=".interactive.InteractiveConfirmActivity"
+            android:label="Welcome To Church"
+            android:windowSoftInputMode="adjustResize"
+            android:theme="@style/AppThemeTrans">
+        </activity>
+        <activity android:name=".interactive.InteractiveFirstActivity"/>
+        <activity android:name=".interactive.InteractionFailActivity"/>
+        <activity android:name=".interactive.InteractiveInfoActivity"/>
+        <activity android:name=".interactive.InteractionSuccessActivity"/>
+    </application>
+
+</manifest>
