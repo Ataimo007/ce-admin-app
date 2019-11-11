@@ -7,6 +7,7 @@ import android.os.Bundle;
 import com.global.tech.space.cechurchadmin.CEService;
 import com.global.tech.space.cechurchadmin.R;
 import com.global.tech.space.cechurchadmin.dialogs.CellBottomSheets;
+import com.global.tech.space.cechurchadmin.dialogs.RankBottomSheets;
 import com.global.tech.space.cechurchadmin.helpers.Helper;
 import com.global.tech.space.cechurchadmin.models.Cell;
 import com.global.tech.space.cechurchadmin.models.Member;
@@ -41,7 +42,7 @@ import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
 
-public class RegisterMemberActivity extends AppCompatActivity implements CellBottomSheets.CellSellectionHandler
+public class RegisterMemberActivity extends AppCompatActivity implements CellBottomSheets.CellSellectionHandler, RankBottomSheets.RankSellectionHandler
 {
 
 //    public static final int ADD_MEMBER = 2001;
@@ -53,10 +54,12 @@ public class RegisterMemberActivity extends AppCompatActivity implements CellBot
     private CEService.CEApi ceApi;
     private LocalDate cdob;
     private CellBottomSheets cells;
+    private RankBottomSheets ranks;
     private Member member;
 
     private boolean exist = false;
     private Cell selectedCell;
+    private Member.Rank selectedRank;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -87,8 +90,8 @@ public class RegisterMemberActivity extends AppCompatActivity implements CellBot
         rankField.setOnTouchListener( (v, event) -> {
             if  ( event.getAction() == MotionEvent.ACTION_UP )
             {
-                cells = new CellBottomSheets();
-                cells.show( getSupportFragmentManager() );
+                ranks = new RankBottomSheets();
+                ranks.show( getSupportFragmentManager() );
             }
 
             return rankField.performClick();
@@ -126,15 +129,20 @@ public class RegisterMemberActivity extends AppCompatActivity implements CellBot
             }
         }
         selectedCell = member.cell;
+        selectedRank = member.rank;
         if ( selectedCell != null )
             ( (TextInputEditText) findViewById(R.id.regs_cell) ).setText( selectedCell.name );
-        member.cell = null;
+        if ( selectedRank != null )
+            ( (TextInputEditText) findViewById(R.id.regs_cell) ).setText( selectedRank.name );
+
+//        member.cell = null;
     }
 
     private void initViews() {
         initDob();
         initYear();
         initCell();
+        initRank();
         initKingsCheck();
         initToolbar();
         initValidation();
@@ -183,6 +191,13 @@ public class RegisterMemberActivity extends AppCompatActivity implements CellBot
         selectedCell = info;
     }
 
+    @Override
+    public void onSelectRank(Member.Rank info) {
+        TextView cell = findViewById(R.id.regs_rank);
+        cell.setText( info.name );
+        selectedRank = info;
+    }
+
     private void initCell() {
         TextView cell = findViewById(R.id.regs_cell);
         cell.setCursorVisible( false );
@@ -214,22 +229,21 @@ public class RegisterMemberActivity extends AppCompatActivity implements CellBot
 
     private void initDob() {
         TextInputEditText dob = findViewById( R.id.regs_dob );
-        CheckBox ignore = findViewById(R.id.reg_ignore_year);
-
-        DateTime now = DateTime.now();
         dob.setCursorVisible( false );
         dob.setOnTouchListener( (v, event) -> {
             if ( event.getAction() == MotionEvent.ACTION_UP )
             {
+                CheckBox ignore = findViewById(R.id.reg_ignore_year);
+                LocalDate date = cdob == null ? LocalDate.now() : cdob;
                 DatePickerDialog picker = new DatePickerDialog(this, R.style.Theme_MaterialComponents_Light_Dialog_Alert,
                         (view, year, month, dayOfMonth) ->
                         {
-                            cdob = LocalDate.parse(String.format("%04d-%02d-%02d", year, month, dayOfMonth),
+                            cdob = LocalDate.parse(String.format("%04d-%02d-%02d", year, month + 1, dayOfMonth),
                                     DateTimeFormat.forPattern("yyyy-MM-dd"));
-                            dob.setText( ignore.isChecked() ? cdob.toString( DateTimeFormat.forPattern("EEEE dd, MMM.") ) :
-                                    cdob.toString( DateTimeFormat.forPattern("EEEE dd, MMM yyyy.") ));
+                            dob.setText( ignore.isChecked() ? cdob.toString( DateTimeFormat.forPattern("EEEE dd, MMMM.") ) :
+                                    cdob.toString( DateTimeFormat.forPattern("EEEE dd, MMMM yyyy.") ));
                         },
-                        now.getYear(), now.getMonthOfYear(), now.getDayOfMonth() );
+                        date.getYear(), date.getMonthOfYear(), date.getDayOfMonth() );
                 picker.setTitle( "Select Date Of Birth" );
                 picker.show();
             }
@@ -281,9 +295,9 @@ public class RegisterMemberActivity extends AppCompatActivity implements CellBot
         Log.d("Register_Member", "Registering a new member" );
 
         if ( member == null )
-            member = new Member( first, last, other, gender, phone, kingsChat, email, dob, address, selectedCell );
+            member = new Member( first, last, other, gender, phone, kingsChat, email, dob, address, selectedCell, selectedRank );
         else
-            member.update( first, last, other, gender, phone, kingsChat, email, dob, address, selectedCell  );
+            member.update( first, last, other, gender, phone, kingsChat, email, dob, address, selectedCell, selectedRank  );
 
         Log.d("Register_Member", "Registering a new member " + member );
 

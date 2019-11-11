@@ -34,7 +34,8 @@ import retrofit2.http.Query;
 public class CEService
 {
     private static CEService ceService;
-    private static final String host = "http://192.168.43.69:8000/";
+    private static final String host = "http://52.174.25.174:8000/";
+//    private static final String host = "http://192.168.43.69:8000/";
 //    private static final String host = "http://192.168.43.69:8000/";
 
     private final CEApi ceApi;

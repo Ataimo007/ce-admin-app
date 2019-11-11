@@ -104,7 +104,10 @@ public class Member extends Model< Member > implements Searchable
 
         public static Rank valueOfIgnoreCase( String name )
         {
-            return Rank.valueOf( name.toUpperCase() );
+            for ( Rank rank : Rank.values() )
+                if ( rank.name.equals( name ) )
+                    return rank;
+            return null;
         }
 
         @Override
@@ -236,7 +239,7 @@ public class Member extends Model< Member > implements Searchable
     }
 
     public void update(String first, String surname, String otherNames, Gender gender, String phone, String kingsChatNo, String email,
-                       DateOfBirth dob, String address, Cell cell) {
+                       DateOfBirth dob, String address, Cell cell, Rank rank ) {
         firstName = first;
         this.surname = surname;
         this.otherNames = otherNames;
@@ -246,11 +249,12 @@ public class Member extends Model< Member > implements Searchable
         emailAddress = email;
         dateOfBirth = dob; //subject to change
         homeAddress = address;
+        this.rank = rank;
         this.cellId = cell != null ? cell.id : null;
     }
 
     public Member(String first, String surname, String otherNames, Gender gender, String phone, String kingsChatNo, String email,
-                  DateOfBirth dob, String address, Cell cell) {
+                  DateOfBirth dob, String address, Cell cell, Rank rank) {
         this();
         firstName = first;
         this.surname = surname;
@@ -261,6 +265,7 @@ public class Member extends Model< Member > implements Searchable
         emailAddress = email;
         dateOfBirth = dob; //subject to change
         homeAddress = address;
+        this.rank = rank;
         this.cellId = cell != null ? cell.id : null;
     }
 

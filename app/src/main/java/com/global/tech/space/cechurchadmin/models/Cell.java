@@ -16,11 +16,11 @@ public class Cell extends Model<Cell> implements Searchable
 
     @SerializedName("leader_id")
     @Expose
-    public int leaderId;
+    public Integer leaderId;
 
     @SerializedName("assistant_id")
     @Expose
-    public int assistantId;
+    public Integer assistantId;
 
     @SerializedName("membership_strength")
     @Expose
@@ -49,7 +49,7 @@ public class Cell extends Model<Cell> implements Searchable
         super(Cell.class);
     }
 
-    public Cell(String name, int leaderId, int assistantId, String venue, String subject ) {
+    public Cell(String name, Integer leaderId, Integer assistantId, String venue, String subject ) {
         this();
         this.name = name;
         this.leaderId = leaderId;

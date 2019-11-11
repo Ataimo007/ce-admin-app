@@ -127,8 +127,8 @@ public class RegisterCellActivity extends AppCompatActivity {
 
     public void register(View view) {
         String name = ( (TextInputEditText) findViewById(R.id.regs_cell_name) ).getText().toString();
-        int leader = this.leader.id;
-        int assistant = this.assistant.id;
+        Integer leader = this.leader.id;
+        Integer assistant = this.assistant == null ? null : this.assistant.id;
         String location = ( (TextInputEditText) findViewById(R.id.regs_cell_location) ).getText().toString();
         String purpose = ( (TextInputEditText) findViewById(R.id.regs_cell_purpose) ).getText().toString();
 
@@ -150,6 +150,8 @@ public class RegisterCellActivity extends AppCompatActivity {
                         Helper.toast( RegisterCellActivity.this, msg );
 
                         Intent intent = new Intent();
+                        cell.leader = leader;
+                        cell.assistant = assistant;
                         intent.putExtra( "cell", cell.toGson() );
                         setResult( RESULT_OK, intent );
                         finish();

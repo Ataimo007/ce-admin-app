@@ -52,6 +52,7 @@ public class GsonConverter
         builder.registerTypeAdapter( MonthDay.class, new MonthDayParsers() );
         builder.registerTypeAdapter( Status.class, new ServiceStatusParsers() );
         builder.registerTypeAdapter( Member.Gender.class, new GenderParsers() );
+        builder.registerTypeAdapter( Member.Rank.class, new RankParsers() );
 
         gson = builder.excludeFieldsWithoutExposeAnnotation().create();
     }
@@ -171,7 +172,7 @@ public class GsonConverter
 
         @Override
         public JsonElement serialize(Member.Rank src, Type typeOfSrc, JsonSerializationContext context) {
-            return new JsonPrimitive( src.name().toLowerCase() );
+            return new JsonPrimitive( src.name );
         }
     }
 }
